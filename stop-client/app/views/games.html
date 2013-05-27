@@ -1,0 +1,27 @@
+<div class="hero-unit">
+  <h1>Stop Game!</h1>
+  
+<br><br><br>
+
+  <table>
+  	<tr>
+  		<th>Color</th>
+  		<th>Country</th>
+  	</tr>
+  	<tr ng-repeat="old_game in games">
+  		<td>
+  			<span>
+  			{{ old_game.color_old }} {{old_game.result_color}}
+  		 </span>
+  		</td>  		
+  		<td>{{ old_game.country_old }} {{old_game.result_country}}</td>
+  	</tr>
+  	<tr>
+  		<td><input id="color" name="color" type="text" ng-model='game.color'></td>
+  		<td><input id="country" name="country" type="text" ng-model='game.country'></td>
+  	</tr>
+  	<tr>
+  		<td><button class="btn btn-primary" ng-click="check(game)">Send</buttonReset</button>
+  	</tr>
+  </table>
+</div>
