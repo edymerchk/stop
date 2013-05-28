@@ -1,11 +1,11 @@
-'use strict';
+Array.prototype.contains = function(obj){return this.indexOf(obj)>=0;}
 
 angular.module('stopClientApp', [])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'GamesCtrl'
+        controller: 'MainCtrl'
       })
       .when('/games', {
         templateUrl: 'views/games.html',
