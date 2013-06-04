@@ -2,6 +2,8 @@
 angular.module('stopClientApp')
   .controller('GamesCtrl', function ($scope) {
   	$scope.games = [];
+    $scope.show_dashboard = false;
+    $scope.show_login = true;
 
   	var  col = {
   		colors: ['red', 'green', 'blue'],
@@ -13,6 +15,11 @@ angular.module('stopClientApp')
   		country: null
   	}
 
+
+    $scope.login = function (user){
+      $scope.show_dashboard = true;
+      $scope.show_login = false;
+    }
 
     $scope.check = function (game){
 

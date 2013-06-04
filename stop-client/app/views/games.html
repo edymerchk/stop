@@ -1,39 +1,40 @@
-<style type="text/css">
-  .correct{
-    background: green;
-  }
-  .incorrect{
-    background: red;
-  }
-</style>
 <div class="hero-unit">
   <h1>Stop Game!</h1>
-
-<br><br><br>
-
-  <table>
-  	<tr>
-  		<th>Color</th>
-  		<th>Country</th>
-  	</tr>
-  	<tr ng-repeat="game in games">
-  		<td>
-  			<span ng-class="{correct: game.result_color, 'incorrect': !game.result_color}">
-  			{{ game.color }}
-  		 </span>
-  		</td>
-  		<td>
-        <span ng-class="{correct: game.result_country, 'incorrect': !game.result_country}">
-        {{ game.country }}
-        </span>
-      </td>
-  	</tr>
-  	<tr>
-  		<td><input id="color" name="color" type="text" ng-model='game.color' ></td>
-  		<td><input id="country" name="country" type="text" ng-model='game.country' required></td>
-  	</tr>
-  	<tr>
-  		<td><button class="btn btn-primary" ng-click="check(game)">Send</buttonReset</button>
-  	</tr>
-  </table>
+<br><br>
+<div ng-show="show_login">
+  <label>user</label>
+  <input id="username" name="username" type="text" ng-model='user.username' required >
+  <button class="btn" ng-click="login(user)">Enter!</button>
+  <br>
+</div>
+<div id="dashboard" ng-show="show_dashboard">
+  <h3>{{user.username}}</h3>
+  <form ng-submit="check(game)" >
+    <table>
+    	<tr>
+    		<th>Color</th>
+    		<th>Country</th>
+    	</tr>
+    	<tr ng-repeat="game in games">
+    		<td>
+    			<span ng-class="{correct: game.result_color, 'incorrect': !game.result_color}">
+    			{{ game.color }}
+    		 </span>
+    		</td>
+    		<td>
+          <span ng-class="{correct: game.result_country, 'incorrect': !game.result_country}">
+          {{ game.country }}
+          </span>
+        </td>
+    	</tr>
+    	<tr>
+    		<td><input id="color" name="color" type="text" ng-model='game.color' required ></td>
+    		<td><input id="country" name="country" type="text" ng-model='game.country' required></td>
+    	</tr>
+    	<tr>
+    		<td><button class="btn btn-primary">Send</buttonReset</button>
+    	</tr>
+    </table>
+  </form>
+</div>
 </div>
